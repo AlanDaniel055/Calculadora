@@ -1,0 +1,149 @@
+:root {
+  --casio-bg: #EAEBEF;
+  --screen-bg: #dde8e1;
+  --screen-text: #333936;
+  --key-dark-bg: #4a4d55;
+  --key-grey-bg: #696E78;
+  --key-blue-bg: #3879C1;
+  --key-orange-bg: #F37F4A;
+  --key-text-light: #FFFFFF;
+  --key-shift-text: #ffab70;
+}
+
+ion-content {
+  --background: #d8d8d8;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.calculator-body {
+  width: 100%;
+  max-width: 420px; 
+  background: #212327;
+  border-radius: 20px;
+  padding: 15px; 
+  box-shadow: 10px 10px 20px #1b1d20, -10px -10px 20px #27292e;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 15px;
+  color: var(--key-grey-bg);
+}
+
+.header .brand { 
+  font-weight: 700; 
+  font-size: 16px; 
+}
+
+.header .solar-panel { 
+  width: 80px; 
+  height: 30px; 
+  background: #333; 
+  border-radius: 4px; 
+}
+
+.screen-area {
+  background-color: var(--screen-bg);
+  border: 2px solid #444;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.4);
+  text-align: right;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.screen-area .history { 
+  font-family: 'VT323', monospace; 
+  font-size: 20px;
+  color: var(--screen-text); 
+  opacity: 0.6; 
+}
+
+.screen-area .display { 
+  font-family: 'VT323', monospace; 
+  font-size: 46px; 
+  line-height: 1; 
+  color: var(--screen-text); 
+  font-weight: bold; 
+  overflow-x: auto;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 10px;
+}
+
+.key {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 52px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--key-dark-bg);
+  color: var(--key-text-light);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0px 4px 0px 0px #1a1c1f, 0 6px 10px rgba(0,0,0,0.4);
+  transition: all 0.07s ease-in-out;
+}
+
+.key:active {
+  transform: translateY(3px);
+  box-shadow: 0px 1px 0px 0px #1a1c1f;
+}
+ 
+.key .label-shift {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--key-shift-text);
+}
+
+.key-7, .key-4, .key-1, .key-0 { 
+  grid-column: 1 / 2; 
+}
+.key-8, .key-5, .key-2, .key-dot { 
+  grid-column: 2 / 3; 
+}
+.key-9, .key-6, .key-3, .key-pi { 
+  grid-column: 3 / 4; 
+}
+.key-del, .key-mul, .key-add, .key-e { 
+  grid-column: 4 / 5; 
+}
+.key-ac, .key-div, .key-sub, .key-exe { 
+  grid-column: 5 / 6; 
+}
+
+.key-dark, .key-const { 
+  background-color: var(--key-dark-bg); 
+}
+.key-fn, .key-op { 
+  background-color: var(--key-grey-bg); 
+}
+.key-del, .key-exe { 
+  background-color: var(--key-blue-bg); 
+}
+.key-ac { 
+  background-color: var(--key-orange-bg); 
+}
+.key-shift, .key-alpha { 
+  font-size: 14px; 
+}

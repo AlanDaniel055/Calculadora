@@ -1,0 +1,60 @@
+<ion-content>
+  <div class="calculator-body">
+
+    <div class="header">
+      <span class="brand">TESLA</span>
+      <span class="solar-panel"></span>
+    </div>
+
+    <div class="screen-area">
+      <div class="history">{{ historyDisplay }}</div>
+      <div class="display">{{ display || '0' }}</div>
+    </div>
+
+    <div class="keypad">
+     
+      <button class="key key-fn" (click)="handleFunction('x^2')"><span class="label-shift">√</span>x²</button>
+      <button class="key key-fn" (click)="handleFunction('^')"><span class="label-shift">x³</span>x^</button>
+      <button class="key key-fn" (click)="handleFunction('log(')"><span class="label-shift">10^x</span>log</button>
+      <button class="key key-fn" (click)="handleFunction('ln(')"><span class="label-shift">e^x</span>ln</button>
+      <button class="key key-fn" (click)="handleFunction('(')">(</button>
+      <button class="key key-fn" (click)="handleFunction(')')">)</button>
+
+      
+      <button class="key key-fn" (click)="handleFunction('sin(')"><span class="label-shift">sin⁻¹</span>sin</button>
+      <button class="key key-fn" (click)="handleFunction('cos(')"><span class="label-shift">cos⁻¹</span>cos</button>
+      <button class="key key-fn" (click)="handleFunction('tan(')"><span class="label-shift">tan⁻¹</span>tan</button>
+      <button class="key key-fn" (click)="handleFunction('!')">n!</button>
+      <button class="key key-shift">SHIFT</button>
+      <button class="key key-alpha">ALPHA</button>
+      
+      
+      <button class="key key-dark key-7" (click)="appendToInput('7')">7</button>
+      <button class="key key-dark key-8" (click)="appendToInput('8')">8</button>
+      <button class="key key-dark key-9" (click)="appendToInput('9')">9</button>
+      <button class="key key-del" (click)="delete()">DEL</button>
+      <button class="key key-ac" (click)="clear()">AC</button>
+
+  
+      <button class="key key-dark key-4" (click)="appendToInput('4')">4</button>
+      <button class="key key-dark key-5" (click)="appendToInput('5')">5</button>
+      <button class="key key-dark key-6" (click)="appendToInput('6')">6</button>
+      <button class="key key-op key-mul" (click)="appendToInput('*')">×</button>
+      <button class="key key-op key-div" (click)="appendToInput('/')">÷</button>
+      
+   
+      <button class="key key-dark key-1" (click)="appendToInput('1')">1</button>
+      <button class="key key-dark key-2" (click)="appendToInput('2')">2</button>
+      <button class="key key-dark key-3" (click)="appendToInput('3')">3</button>
+      <button class="key key-op key-add" (click)="appendToInput('+')">+</button>
+      <button class="key key-op key-sub" (click)="appendToInput('-')">−</button>
+
+
+      <button class="key key-dark key-0" (click)="appendToInput('0')">0</button>
+      <button class="key key-dark key-dot" (click)="appendToInput('.')">.</button>
+      <button class="key key-const" (click)="appendToInput('pi')">π</button>
+      <button class="key key-const" (click)="appendToInput('e')">e</button>
+      <button class="key key-exe" (click)="calculate()">=</button>
+    </div>
+  </div>
+</ion-content>
